@@ -1,6 +1,5 @@
 let gastoTotal = [];
 let responsableGasto = [];
-let totalGastado = 0;
 
 function gastos(gasto) {
   gasto = parseInt(prompt("Ingrese Gasto"));
@@ -12,7 +11,12 @@ function gastos(gasto) {
 for (let i = 0; i <= 1; i++) {
   gastos();
   console.log(gastoTotal);
-  totalGastado += gastoTotal;
 }
 console.log("Se han hecho", gastoTotal.length, "gastos");
-console.log(totalGastado);
+
+let totalGastado = 0;
+for (let i = 0; i < gastoTotal.length; i++) {
+  const gasto2 = gastoTotal[i];
+  totalGastado += gasto2;
+}
+console.log("El monto total gastado es de", totalGastado, "pesos argentinos");

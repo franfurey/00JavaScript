@@ -1,18 +1,18 @@
 let gastoTotal = [];
+let responsableGasto = [];
+let totalGastado = 0;
 
 function gastos(gasto) {
   gasto = parseInt(prompt("Ingrese Gasto"));
+  responsable = prompt("Ingrese responsable del Gasto");
   gastoTotal.push(gasto);
+  responsableGasto.push(responsable);
 }
 
-let totalGastado = 0;
-
-for (let i = 0; i <= 2; i++) {
-  console.log("Primera parte", gastos());
+for (let i = 0; i <= 1; i++) {
   gastos();
-  console.log("Segunda parte", gastos());
-  const numero = gastos[i];
-  totalGastado += gastoTotal;
   console.log(gastoTotal);
+  totalGastado += gastoTotal;
 }
+console.log("Se han hecho", gastoTotal.length, "gastos");
 console.log(totalGastado);

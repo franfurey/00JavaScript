@@ -10,7 +10,7 @@ let totalGastado = 0;
 for (let i = 0; i <= 2; i++) {
   console.log("Primera parte", gastos());
   gastos();
-  console.log("Segunda parte", gastos();
+  console.log("Segunda parte", gastos());
   const numero = gastos[i];
   totalGastado += gastoTotal;
   console.log(gastoTotal);

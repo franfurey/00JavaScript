@@ -20,3 +20,6 @@ for (let i = 0; i < gastoTotal.length; i++) {
   totalGastado += gasto2;
 }
 console.log("El monto total gastado es de", totalGastado, "pesos argentinos");
+
+console.log("El mayor gasto producido fue de:", Math.max(gastoTotal));
+console.log("El menor gasto producido fue de:", Math.min(gastoTotal));

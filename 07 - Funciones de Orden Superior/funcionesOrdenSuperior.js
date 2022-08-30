@@ -55,7 +55,7 @@ let edades = usuarios.map((usuario) => {
 
 console.log(edades);
 
-// let gastosTotales = [
+// let gastosTotales2 = [
 //   {
 //     id: 1,
 //     gastoTotal2: 2000,

@@ -1,5 +1,23 @@
 /* GENERAL */
 
+.divGastos {
+  color: rgb(9, 6, 49);
+  padding: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.divDesc {
+  color: rgb(9, 6, 49);
+  padding: 2%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-content: center;
+}
+
 body {
   color: rgb(9, 6, 49);
   background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);

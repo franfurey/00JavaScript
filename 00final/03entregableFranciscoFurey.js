@@ -1,3 +1,41 @@
+let formulario = document.querySelector("#login");
+
+function login(event) {
+  event.preventDefault();
+  console.log(event);
+  console.dir(formulario);
+  let valueUsername = formulario[0].value;
+  let valuePassword = formulario[1].value;
+  console.log(valueUsername);
+  console.log(valuePassword);
+  const token = generateToken(valueUsername, valuePassword);
+  localStorage.setItem("token", token);
+  const isAuth = existToken();
+  if (isAuth) {
+    const divPrivateContent = document.querySelector("#privateContent");
+    divPrivateContent.className = "showPrivateContent";
+    formulario.ClassName = "hideContent";
+  }
+}
+
+function generateToken(username, password) {
+  const usuario = {
+    username,
+    password,
+  };
+  return JSON.stringify(usuario);
+}
+
+function existToken() {
+  if (localStorage.getItem("token")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// RESTO
+
 let gastoTotal = [];
 let responsableGasto = [];
 

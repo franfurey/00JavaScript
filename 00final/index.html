@@ -15,10 +15,24 @@
       <div>
         <img id="imgLogo" loading="lazy" src="./images/logoMini.png" alt="" />
       </div>
+      <form id="'login">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" placeholder="Username" name="'username" />
+        </div>
+        <div class="field">
+          <label for="password"> Password</label>
+          <input type="text" placeholder="Password" name="password" />
+        </div>
+        <div class="field">
+          <button type="submit" onclick="login(event)">Login</button>
+        </div>
+      </form>
     </header>
     <hr />
+
     <!-- MAIN -->
-    <main>
+    <main class="hideContent" id="privateContent">
       <div class="plataformaCenter">
         <h1>Plataforma diseñada para ponerte en control</h1>
         <h3>Edicion | Revision | Reportaje | Aprobacion | Reembolsos</h3>
@@ -141,4 +155,3 @@
     </footer>
   </body>
 </html>
-Footer

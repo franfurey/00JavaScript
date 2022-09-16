@@ -1,6 +1,19 @@
 /* GENERAL */
 
 .field {
+  display: block;
+  margin: 5px;
+}
+
+.hideContent {
+  display: none;
+}
+
+.showContent {
+  display: block;
+}
+
+.field {
   display: flex;
   flex-wrap: row;
   margin: 2%;
@@ -315,6 +328,7 @@ header nav ul li {
 /* FOOTER */
 
 footer {
+  margin-top: 15%;
   display: flex column;
   justify-content: space-around;
   align-content: center;

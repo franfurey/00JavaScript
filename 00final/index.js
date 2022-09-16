@@ -70,14 +70,14 @@ function saveExpense() {
       }
     }
     expenseForm["idExpense"] = 0;
-    updateFoodTable();
+    updateExpenseTable();
   } else {
     //crear
     const newExpense = new Expense(
       counter,
-      expenseForm.expenseName.value,
-      expenseForm.expenseLink.value,
-      expenseForm.expensePrice.value
+      expenseForm.expenseDescription.value,
+      expenseForm.expensePerson.value,
+      expenseForm.expenseAmount.value
     );
     expense.push(newExpense);
     counter++;

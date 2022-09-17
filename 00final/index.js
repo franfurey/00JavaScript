@@ -29,6 +29,11 @@ function generateToken(username, password) {
   return JSON.stringify(usuario);
 }
 
+// NO ME ESTA FUNCIONANDO
+// function existToken() {
+//   localStorage.getItem("token") !== null ? true : false;
+// }
+
 function existToken() {
   if (localStorage.getItem("token") !== null) {
     return true;
@@ -58,14 +63,19 @@ const tableExpense = document.querySelector("#expenseTable tbody");
 const expenseForm = document.querySelector("#addExpense");
 updateExpenseTable();
 
+// Aqui abajo agregue un operador logico avanzado, para resumir.
+// Pero a la hora de editar, no me funciona, y se crea uno nuevo.
+let { idExpense, expenseDescription, expensePerson, expenseAmount } =
+  expenseForm;
+
 function saveExpense() {
-  console.log(expenseForm.idExpense);
-  if (expenseForm.idExpense && expenseForm.idExpense != 0) {
+  console.log(idExpense);
+  if (idExpense && idExpense != 0) {
     for (let index = 0; index < expense.length; index++) {
-      if (expense[index].id == expenseForm.idExpense) {
-        expense[index].description = expenseForm.expenseDescription.value;
-        expense[index].person = expenseForm.expensePerson.value;
-        expense[index].amount = expenseForm.expenseAmount.value;
+      if (expense[index].id == idExpense) {
+        expense[index].description = expenseDescription.value;
+        expense[index].person = expensePerson.value;
+        expense[index].amount = expenseAmount.value;
         break;
       }
     }
@@ -75,9 +85,9 @@ function saveExpense() {
     //crear
     const newExpense = new Expense(
       counter,
-      expenseForm.expenseDescription.value,
-      expenseForm.expensePerson.value,
-      expenseForm.expenseAmount.value
+      expenseDescription.value,
+      expensePerson.value,
+      expenseAmount.value
     );
     expense.push(newExpense);
     counter++;
@@ -127,9 +137,25 @@ function editExpense(event) {
   const btn = event.target;
   const id = btn.id.split("_")[1];
   const gasto = expense.filter((expense) => expense.id == id)[0];
-  expenseForm.expenseDescription.value = gasto.description;
-  expenseForm.expensePerson.value = gasto.person;
-  expenseForm.expenseAmount.value = gasto.amount;
+  expenseDescription.value = gasto.description;
+  expensePerson.value = gasto.person;
+  expenseAmount.value = gasto.amount;
   expenseForm["idExpense"] = gasto.id;
   console.dir(expenseForm);
 }
+
+// for (let i = 0; i <= 1; i++) {
+//   gastos();
+//   console.log(gastoTotal);
+// }
+// console.log("Se han hecho", gastoTotal.length, "gastos");
+
+// let totalGastado = 0;
+// for (let i = 0; i < gastoTotal.length; i++) {
+//   const gasto2 = gastoTotal[i];
+//   totalGastado += gasto2;
+// }
+// console.log("El monto total gastado es de", totalGastado, "pesos argentinos");
+
+console.log("El mayor gasto producido fue de:", Math.max(...expenseAmount));
+console.log("El menor gasto producido fue de:", Math.min(...expenseAmount));

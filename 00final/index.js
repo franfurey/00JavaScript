@@ -59,6 +59,7 @@ class Expense {
 
 let expense = [];
 let counter = 1;
+let idEditedExpense = 0;
 const tableExpense = document.querySelector("#expenseTable tbody");
 const expenseForm = document.querySelector("#addExpense");
 updateExpenseTable();
@@ -69,17 +70,16 @@ let { idExpense, expenseDescription, expensePerson, expenseAmount } =
   expenseForm;
 
 function saveExpense() {
-  console.log(idExpense);
-  if (idExpense && idExpense != 0) {
+  if (idEditedExpense != 0) {
     for (let index = 0; index < expense.length; index++) {
-      if (expense[index].id == idExpense) {
+      if (expense[index].id == idEditedExpense) {
         expense[index].description = expenseDescription.value;
         expense[index].person = expensePerson.value;
         expense[index].amount = expenseAmount.value;
         break;
       }
     }
-    expenseForm["idExpense"] = 0;
+    idEditedExpense = 0;
     updateExpenseTable();
   } else {
     //crear
@@ -140,8 +140,8 @@ function editExpense(event) {
   expenseDescription.value = gasto.description;
   expensePerson.value = gasto.person;
   expenseAmount.value = gasto.amount;
-  expenseForm["idExpense"] = gasto.id;
-  console.dir(expenseForm);
+  idEditedExpense = gasto.id;
+  console.dir(foodForm);
 }
 
 // for (let i = 0; i <= 1; i++) {

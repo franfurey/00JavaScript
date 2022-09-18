@@ -1,5 +1,17 @@
 /* GENERAL */
 
+.botones2 {
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-around;
+}
+#botones2 {
+  margin: 5%;
+  padding: 1%;
+  font-size: 200%;
+  background-color: #25d366;
+}
+
 .field {
   display: block;
   margin: 5px;

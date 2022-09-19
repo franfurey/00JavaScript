@@ -92,6 +92,11 @@ function saveExpense() {
     expense.push(newExpense);
     counter++;
     updateExpenseTable();
+    Toastify({
+      text: "Se agrego el gasto",
+
+      duration: 3000,
+    }).showToast();
   }
 }
 
@@ -128,22 +133,26 @@ function updateExpenseTable() {
 
 function deleteExpense(event) {
   Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    title: "Estas seguro?",
+    text: "Esta accion NO es revertible",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!",
+    confirmButtonText: "Eliminar gasto",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      const btn = event.target;
+      const id = btn.id.split("_")[1];
+      expense = expense.filter((expense) => expense.id != id);
+      updateExpenseTable();
+      Swal.fire(
+        "Eliminado!",
+        "El gasto seleccionado ha sido eliminado.",
+        "success"
+      );
     }
   });
-  const btn = event.target;
-  const id = btn.id.split("_")[1];
-  expense = expense.filter((expense) => expense.id != id);
-  updateExpenseTable();
 }
 
 function editExpense(event) {

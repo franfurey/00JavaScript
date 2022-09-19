@@ -95,7 +95,7 @@ function saveExpense() {
     Toastify({
       text: "Se agrego el gasto",
 
-      duration: 3000,
+      duration: 2000,
     }).showToast();
   }
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "descripcion": "Gasto 1",
+    "monto": 1500,
+    "responsable": "Francisco",
+    "id": 1
+  },
+  { "descripcion": "Gasto 2", "monto": 2500, "responsable": "Ulises", "id": 2 },
+  { "descripcion": "Gasto 3", "monto": 3500, "responsable": "Ulises", "id": 3 },
+  {
+    "descripcion": "Gasto 4",
+    "monto": 4500,
+    "responsable": "Francisco",
+    "id": 4
+  },
+  {
+    "descripcion": "Gasto 5",
+    "monto": 5500,
+    "responsable": "Francisco",
+    "id": 5
+  }
+]

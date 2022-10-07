@@ -380,6 +380,9 @@ footer div ul li a {
 ul {
   list-style: none;
 }
+.modal-content {
+  width: 120%;
+}
 
 #footerWsp {
   background-color: #25d366;
